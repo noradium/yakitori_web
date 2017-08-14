@@ -23,6 +23,9 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.get('/list', (req, res, next) => {
+});
+
 function error(res, status, message) {
   res.status(status).json({
     status,

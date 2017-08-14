@@ -10,6 +10,10 @@ const port = process.env.PORT || 3001;
 
 const app = express();
 
+const batchStart = require('./batch/YakitoriList');
+
+batchStart();
+
 // template engine
 app.engine('ect', ect({ watch: true, root: __dirname + '/views', ext: '.ect' }).render);
 app.set('view engine', 'ect');
