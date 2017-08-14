@@ -2,7 +2,26 @@ const Condition = require('./Condition');
 const Food = require('./Food');
 
 class YakitoriClassifier {
+  static get FOOD_NAME_MAP() {
+    return {
+      [Food.Momo]: 'モモ'
+    };
+  }
+  static get MIXED_FOOD_NAME_MAP() {
+    return {
+    };
+  }
   static get MAX_FOOD_NUM() { return 5;}
+
+  static isEatable(name) {
+    if (Object.values(YakitoriClassifier.FOOD_NAME_MAP).includes(name)) {
+      return true;
+    }
+    if (Object.values(YakitoriClassifier.MIXED_FOOD_NAME_MAP).includes(name)) {
+      return true;
+    }
+    return false;
+  }
 
   /**
    * 素材から名前を決定して返します。
@@ -118,10 +137,7 @@ class YakitoriClassifier {
     const names = count['name'];
     switch (names.length) {
       case 1: {
-        switch (names[0]['key']) {
-          case Food.Momo:
-            return 'モモ';
-        }
+        return YakitoriClassifier.FOOD_NAME_MAP[names[0]['key']];
       }
     }
     return null;

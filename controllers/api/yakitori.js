@@ -24,6 +24,13 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/list', (req, res, next) => {
+  YakitoriRedis.getList()
+    .then((list) => {
+      res.json(list);
+    })
+    .catch((error) => {
+      error(res, 500, 'internal server error');
+    });
 });
 
 function error(res, status, message) {

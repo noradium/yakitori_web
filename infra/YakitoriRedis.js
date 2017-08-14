@@ -55,6 +55,21 @@ class YakitoriRedis {
       }
     });
   }
+
+  getList() {
+    return new Promise((resolve, reject) => {
+      this.client.get(this.YAKITORI_LIST_KEY, (error, list) => {
+        if (error) {
+          reject(error);
+        }
+        try {
+          resolve(JSON.parse(list));
+        } catch (error) {
+          reject(error);
+        }
+      });
+    });
+  }
 }
 
 module.exports = new YakitoriRedis();
