@@ -2,25 +2,26 @@ const Condition = require('./Condition');
 const Food = require('./Food');
 
 class YakitoriClassifier {
-  static get FOOD_NAME_MAP() {
-    return {
-      [Food.Momo]: 'モモ'
+  constructor() {
+    this.FOOD_NAME_MAP = {
+      [Food.Momo]: 'もも',
+      [Food.Sasami]: 'ささみ',
+      [Food.Negi]: 'ねぎ',
+      [Food.Nankotsu]: 'なんこつ',
+      [Food.Tsukune]: 'つくね',
+      [Food.Heart]: 'はぁと',
+      [Food.Liver]: 'レバー',
     };
-  }
-  static get MIXED_FOOD_NAME_MAP() {
-    return {
+    this.MIXED_FOOD_NAME_MAP = {
+      Negima: 'ねぎま'
     };
+    this.MAX_FOOD_NUM = 5;
+    this.FOOD_NAME_REGEXP = new RegExp(`${Object.values(this.FOOD_NAME_MAP).join('|')}`, 'g');
+    this.MIXED_FOOD_NAME_REGEXP = new RegExp(`${Object.values(this.MIXED_FOOD_NAME_MAP).join('|')}`, 'g');
   }
-  static get MAX_FOOD_NUM() { return 5;}
 
-  static isEatable(name) {
-    if (Object.values(YakitoriClassifier.FOOD_NAME_MAP).includes(name)) {
-      return true;
-    }
-    if (Object.values(YakitoriClassifier.MIXED_FOOD_NAME_MAP).includes(name)) {
-      return true;
-    }
-    return false;
+  isEatable(name) {
+    return '' === name.replace(this.MIXED_FOOD_NAME_REGEXP, '').replace(this.FOOD_NAME_REGEXP, '');
   }
 
   /**
@@ -28,7 +29,7 @@ class YakitoriClassifier {
    * @param {{name: string, condition: string}[]} foods
    * @returns {string|null}
    */
-  static classify(foods) {
+  classify(foods) {
     if (!foods || !Array.isArray(foods) || foods.length > this.MAX_FOOD_NUM) {
       return null;
     }
@@ -51,7 +52,7 @@ class YakitoriClassifier {
   /**
    * @param {{name: string, condition: string}[]} foods
    */
-  static countFoods(foods) {
+  countFoods(foods) {
     const counter = {};
 
     foods.forEach((food) => {
@@ -82,7 +83,7 @@ class YakitoriClassifier {
     return result;
   }
 
-  static generateNumPrefix(foods) {
+  generateNumPrefix(foods) {
     if (foods.length === this.MAX_FOOD_NUM) {
       return '';
     }
@@ -92,7 +93,7 @@ class YakitoriClassifier {
     return '';
   }
 
-  static generateConditionPrefix(count) {
+  generateConditionPrefix(count) {
     const conditions = count['condition'];
     switch (conditions.length) {
       case 1: {
@@ -133,15 +134,24 @@ class YakitoriClassifier {
     return '';
   }
 
-  static generateName(foods, count) {
+  generateName(foods, count) {
     const names = count['name'];
     switch (names.length) {
       case 1: {
-        return YakitoriClassifier.FOOD_NAME_MAP[names[0]['key']];
+        return this.FOOD_NAME_MAP[names[0]['key']];
+      }
+      case 2: {
+        if (
+          names[0]['key'] === Food.Momo && names[1]['key'] === Food.Negi ||
+          names[0]['key'] === Food.Negi && names[1]['key'] === Food.Momo
+        ) {
+          return this.MIXED_FOOD_NAME_MAP.Negima;
+        }
+        return `${this.FOOD_NAME_MAP[names[0]['key']]}${this.FOOD_NAME_MAP[names[1]['key']]}`
       }
     }
-    return null;
+    return 'ミックス';
   }
 }
 
-module.exports = YakitoriClassifier;
+module.exports = new YakitoriClassifier;
