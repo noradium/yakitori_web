@@ -1,0 +1,7 @@
+{
+  "apps" : [{
+    "name": "yakitori_web",
+    "script": "./app.js",
+    "watch": true
+  }]
+}

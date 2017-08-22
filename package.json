@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack && cpx resources/src/css/* resources/dist/css/ && cpx resources/src/image/* resources/dist/image/",
+    "restart": "pm2 restart process.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "noradium",
@@ -16,6 +17,7 @@
     "ect": "^0.5.9",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
+    "pm2": "^2.6.1",
     "promise-polyfill": "^6.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
