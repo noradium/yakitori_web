@@ -4,7 +4,7 @@
   "description": "yakitori の web サーバ兼 api サーバ",
   "main": "app.js",
   "scripts": {
-    "build": "webpack && cpx resources/src/css/* resources/dist/css/",
+    "build": "webpack && cpx resources/src/css/* resources/dist/css/ && cpx resources/src/image/* resources/dist/image/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "noradium",
