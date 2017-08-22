@@ -4,11 +4,11 @@
   "description": "yakitori の web サーバ兼 api サーバ",
   "main": "app.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && cpx resources/src/css/* resources/dist/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "noradium",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
@@ -16,9 +16,12 @@
     "ect": "^0.5.9",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
+    "promise-polyfill": "^6.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "redis": "^2.8.0"
+    "react-twitter-widgets": "^1.4.0",
+    "redis": "^2.8.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -29,8 +32,10 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
+    "cpx": "^1.5.0",
     "mobx": "^3.1.11",
     "mobx-react": "^4.2.1",
+    "moment": "^2.18.1",
     "webpack": "^2.6.1"
   }
 }

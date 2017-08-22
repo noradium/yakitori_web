@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h2 {
+  color: rgb(217, 151, 197);
+  font-size: 26px;
+  font-weight: bold;
+  padding: 0 8px;
+  border-bottom: solid 3px;
+  margin: 16px 0 8px;
+}
+
+.LoveForYumiri {
+  font-size: 160%;
+  font-weight: bold;
+}
+
+.CountDownContainer {
+  background-color: rgba(217, 151, 197, .9);
+  color: #fff;
+  padding: 8px 16px;
+}
+
+.CountDownContainer .Text {
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.CountDownContainer .Text span {
+  margin: 0 2px;
+}
+
+.CountDownContainer .RemainingTime {
+  text-align: right;
+  margin: 8px 0;
+}
+
+.CountDownContainer .TimeFragment {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.CountDownContainer .TimeFragment .Value {
+  font-size: 250%;
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+.CountDownContainer .TimeFragment .Suffix {
+}
+
+.SiteDescriptionContainer {
+  text-align: center;
+  margin: 32px 0;
+  color: rgb(217, 151, 197);
+  line-height: 2em;
+}
+
+.SiteDescriptionContainer p {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.SiteDescriptionContainer a {
+  color: rgb(217, 151, 197);
+}
+
+.SiteDescriptionContainer a:hover {
+  color: rgb(115, 80, 104);
+}
+
+.GameContainer {
+}
+
+.GameContainer iframe {
+  transform-origin: top left;
+}
+
+.GameContainer .GameDescription {
+}
+
+.YakitoriListContainer {
+  margin-bottom: 24px;
+}
+
+.YakitoriListContainer .ListCaption {
+  font-size: 20px;
+  background-color: #aa97d8;
+  color: #fff;
+  padding: 0 8px;
+}
+
+.YakitoriList {
+  list-style-type: none;
+  width: 100%;
+  border-spacing: 0;
+}
+
+.YakitoriList .YakitoriListItem {
+  font-size: 24px;
+  color: rgb(217, 151, 197);
+  font-weight: bold;
+}
+
+.YakitoriList .YakitoriListItem:nth-child(even) {
+  background-color: #eee;
+}
+
+.YakitoriList .YakitoriListItem[data-rank="1"] {
+  font-size: 300%;
+}
+
+.YakitoriList .YakitoriListItem[data-rank="2"] {
+  font-size: 220%;
+}
+
+.YakitoriList .YakitoriListItem[data-rank="3"] {
+  font-size: 180%;
+}
+
+.YakitoriList .YakitoriListItem .ItemRank {
+  text-align: right;
+  width: 100px;
+}
+
+.YakitoriList .YakitoriListItem .ItemName {
+  padding: 0 12px;
+}
+
+.YakitoriList .YakitoriListItem .ItemNum {
+  text-align: right;
+  padding-right: 8px;
+}
+
+.EatableList {
+  margin-bottom: 8px;
+}
+
+.SiteFooterContainer {
+  background-color: rgba(217, 151, 197, .9);
+  padding: 8px 12px;
+  color: #fff;
+  text-align: right;
+}
+
+.SiteFooterContainer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.SiteFooterContainer a:hover {
+  color: #ccc;
+}

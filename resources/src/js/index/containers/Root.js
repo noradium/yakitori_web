@@ -1,20 +1,22 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import { countdowns } from '../states/Countdowns';
+import {CountDownContainer} from './CountDownContainer/CountDownContainer';
+import {GameContainer} from "./GameContainer/GameContainer"
+import {SiteDescriptionContainer} from "./SiteDescriptionContainer/SiteDescriptionContainer";
+import {SiteFooterContainer} from "./SiteFooterContainer/SiteFooterContainer";
+import {YakitoriListContainer} from "./YakitoriListContainer/YakitoriListContainer";
 
 @observer
 class Root extends React.Component {
-    render() {
-      return <div>
-        <div>{countdowns.count}</div>
-      </div>;
-    }
-
-    componentDidMount() {
-      setInterval(() => {
-        countdowns.addCount(1);
-      }, 1000);
-    }
+  render() {
+    return <div>
+      <CountDownContainer/>
+      <SiteDescriptionContainer/>
+      <GameContainer/>
+      <YakitoriListContainer/>
+      <SiteFooterContainer/>
+    </div>;
+  }
 }
 
 export { Root }

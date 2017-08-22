@@ -18,6 +18,7 @@ batchStart();
 app.engine('ect', ect({ watch: true, root: __dirname + '/views', ext: '.ect' }).render);
 app.set('view engine', 'ect');
 app.use('/js', express.static('resources/dist/js'));
+app.use('/css', express.static('resources/dist/css'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
