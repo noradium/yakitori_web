@@ -5,6 +5,7 @@ import {GameContainer} from "./GameContainer/GameContainer"
 import {SiteDescriptionContainer} from "./SiteDescriptionContainer/SiteDescriptionContainer";
 import {SiteFooterContainer} from "./SiteFooterContainer/SiteFooterContainer";
 import {YakitoriListContainer} from "./YakitoriListContainer/YakitoriListContainer";
+import {TwitterTimelineContainer} from "./TwitterTimelineContainer/TwitterTimelineContainer";
 
 @observer
 class Root extends React.Component {
@@ -14,6 +15,7 @@ class Root extends React.Component {
       <SiteDescriptionContainer/>
       <GameContainer/>
       <YakitoriListContainer/>
+      <TwitterTimelineContainer/>
       <SiteFooterContainer/>
     </div>;
   }
