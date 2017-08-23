@@ -23,7 +23,7 @@ app.use('/image', express.static('resources/dist/image'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('common'));
 // bodyparser
 app.use(bodyParser.urlencoded({
   extended: true
