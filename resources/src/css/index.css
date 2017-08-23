@@ -192,3 +192,29 @@ h2 {
 .SiteFooterContainer a:hover {
   color: #ccc;
 }
+
+@media screen and (max-width: 530px) {
+  .CountDownContainer .Text {
+    font-size: 16px;
+  }
+
+  .CountDownContainer .RemainingTime {
+    font-size: 10px;
+  }
+
+  .YakitoriList .YakitoriListItem {
+    font-size: 18px;
+  }
+
+  .YakitoriList .YakitoriListItem[data-rank="1"] {
+    font-size: 220%;
+  }
+
+  .YakitoriList .YakitoriListItem[data-rank="2"] {
+    font-size: 180%;
+  }
+
+  .YakitoriList .YakitoriListItem[data-rank="3"] {
+    font-size: 140%;
+  }
+}
