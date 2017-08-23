@@ -30,7 +30,8 @@ h2 {
 
 .CountDownContainer .Text {
   font-size: 24px;
-  margin: 8px 0;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .CountDownContainer .Text span {
@@ -39,7 +40,8 @@ h2 {
 
 .CountDownContainer .RemainingTime {
   text-align: right;
-  margin: 8px 0;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .CountDownContainer .TimeFragment {
@@ -77,6 +79,10 @@ h2 {
 }
 
 .GameContainer {
+}
+
+.GameContainer .IframeContainer {
+  overflow: hidden;
 }
 
 .GameContainer iframe {
