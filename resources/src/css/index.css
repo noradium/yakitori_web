@@ -87,6 +87,7 @@ h2 {
 
 .GameContainer iframe {
   transform-origin: top left;
+  -webkit-transform-origin: top left;
 }
 
 .GameContainer .GameDescription {

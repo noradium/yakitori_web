@@ -31,7 +31,8 @@ class GameContainer extends React.Component {
       return;
     }
     const scale = document.documentElement.clientWidth / this.WIDTH;
-    this.iframe.style.transform = `scale(${scale})`;
+    this.iframe.style['transform'] = `scale(${scale})`;
+    this.iframe.style['-webkit-transform'] = `scale(${scale})`;
     this.iframeContainer.style.height = `${this.HEIGHT * scale}px`;
   }
 }
