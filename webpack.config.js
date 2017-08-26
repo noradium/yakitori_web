@@ -4,7 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   context: __dirname + '/resources/src/js',
   entry: {
-    'index': './index/index.js'
+    'index': ['es6-promise', 'whatwg-fetch', './index/index.js']
   },
   output: {
     path: __dirname + '/resources/dist/js',
