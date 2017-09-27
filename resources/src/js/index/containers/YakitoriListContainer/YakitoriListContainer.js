@@ -8,7 +8,7 @@ class YakitoriListContainer extends React.Component {
     const eatableList = yakitoriList.list ? yakitoriList.list.sortedEatableList : [];
     const uneatableList = yakitoriList.list ? yakitoriList.list.sortedUneatableList : [];
     return <div className="YakitoriListContainer">
-      <h2>みんなが焼いた焼き鳥</h2>
+      <h2 id="yakitori-list">みんなが焼いた焼き鳥</h2>
       <div className="ListCaption">おいしい部門</div>
       <table className="EatableList YakitoriList">
         <tbody>

@@ -78,6 +78,30 @@ h2 {
   color: rgb(115, 80, 104);
 }
 
+.HappyBirthdayContainer {
+  text-align: center;
+  margin: 132px 0;
+  color: rgb(217, 151, 197);
+  line-height: 2em;
+}
+
+.HappyBirthdayContainer .Message {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.OrderButtonWrapper {
+  margin-top: 24px;
+}
+
+.OrderButtonWrapper .Button {
+  height: 32px;
+}
+
+.OrderButtonWrapper .Message {
+  font-size: 16px;
+}
+
 .GameContainer {
 }
 

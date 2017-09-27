@@ -14,4 +14,38 @@ export default class YakitoriAPI {
         return YakitoriListFactory.create(json);
       });
   }
+
+  incrementHeart() {
+    return fetch('/api/yakitori', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({foods: [
+        {
+          name: 'heart',
+          condition: 'good'
+        },
+        {
+          name: 'heart',
+          condition: 'good'
+        },
+        {
+          name: 'heart',
+          condition: 'good'
+        },
+        {
+          name: 'heart',
+          condition: 'good'
+        },
+        {
+          name: 'heart',
+          condition: 'good'
+        }
+      ]})
+    })
+      .then((response) => {
+        return response.json();
+      });
+  }
 }
