@@ -47,6 +47,9 @@ class CountDownContainer extends React.Component {
   }
 
   _zeroPadding(num) {
+    if (num < 0) {
+      return num;
+    }
     return (num < 10 ? '0' : '') + num;
   }
 }
