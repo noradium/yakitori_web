@@ -14,7 +14,7 @@ class CountDownContainer extends React.Component {
     const isMonthsVisible = !!months;
     const isDaysVisible = isMonthsVisible || !!days;
     const isHoursVisible = isDaysVisible || !!hours;
-    const isMinutesVisible = isHoursVisible || !!hours;
+    const isMinutesVisible = isHoursVisible || !!minutes;
     const isSecondsVisible = isMinutesVisible || !!seconds;
 
     return <div className="CountDownContainer">
